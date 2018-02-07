@@ -15,7 +15,7 @@ public class Lab03d
 		Distance d1 = new Distance(1,1,2,1);
 		d1.calcDistance();
 		d1.print();
-		d1.setCoordinates(5, 2, 7, 2);
+		d1.setCoordinates(5, 2, 7, 8);
 		d1.calcDistance();
 		d1.print();
 		

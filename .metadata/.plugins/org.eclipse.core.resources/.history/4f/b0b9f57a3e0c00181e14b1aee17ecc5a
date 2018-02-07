@@ -41,7 +41,7 @@ public class Distance
 
 	public void calcDistance()
 	{
-		distance = Math.sqrt(Math.pow((xTwo-xOne),2.0)+Math.pow((yTwo-yOne),2));
+		distance = Math.sqrt(Math.pow((xTwo-xOne),2.0)-Math.pow((yTwo-yOne),2));
 
 
 
@@ -51,7 +51,7 @@ public class Distance
 	{
 		System.out.println("Enter X1 :: " + xOne);
 		System.out.println("Enter Y1 :: " + yOne);
-		System.out.println("Enter X2 :: " + xTwo);
+		System.out.println("Enter X2 :: " + xOne);
 		System.out.println("Enter Y2 :: " + yTwo);
 		System.out.println("distance == " + distance);
 

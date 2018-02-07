@@ -22,26 +22,20 @@ public class Distance
 
 	public Distance(int x1, int y1, int x2, int y2)
 	{
-		xOne = x1;
-		yOne = y1;
-		xTwo = x2;
-		yTwo = y2;
+
 
 
 	}
 
 	public void setCoordinates(int x1, int y1, int x2, int y2)
 	{
-		xOne = x1;
-		yOne = y1;
-		xTwo = x2;
-		yTwo = y2;
+
+
 
 	}
 
 	public void calcDistance()
 	{
-		distance = Math.sqrt(Math.pow((xTwo-xOne),2.0)+Math.pow((yTwo-yOne),2));
 
 
 
@@ -49,11 +43,6 @@ public class Distance
 
 	public void print( )
 	{
-		System.out.println("Enter X1 :: " + xOne);
-		System.out.println("Enter Y1 :: " + yOne);
-		System.out.println("Enter X2 :: " + xTwo);
-		System.out.println("Enter Y2 :: " + yTwo);
-		System.out.println("distance == " + distance);
 
 
 
