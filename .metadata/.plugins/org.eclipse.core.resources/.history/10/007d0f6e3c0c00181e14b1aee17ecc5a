@@ -12,13 +12,7 @@ public class Lab03c
 {
 	public static void main( String[] args )
    {
-		Quadratic q1 = new Quadratic(3,2,-7);
-		q1.calcRoots();
-		q1.print();
-		q1.setEquation(5,-8,3);
-		q1.calcRoots();
-		q1.print();
-   	
+   	//add test cases
    	
    	
 		
