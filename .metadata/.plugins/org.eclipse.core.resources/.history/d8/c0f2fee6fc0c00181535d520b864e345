@@ -46,6 +46,7 @@ public class StringChecker
 
 	public boolean findSubString(String s)
 	{
+		int length = s.length();
 		if (word.indexOf(s) != -1){
 			
 			return true;			
