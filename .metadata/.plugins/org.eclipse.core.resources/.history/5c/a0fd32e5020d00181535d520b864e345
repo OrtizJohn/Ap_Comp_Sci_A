@@ -15,12 +15,13 @@ public class Lab05d
 		
 		out.print("Enter a letter :: ");
 		char letter = keyboard.next().charAt(0);
-		CharacterAnalyzer test = new CharacterAnalyzer(letter);  //A
+		CharacterAnalyzer test = new CharacterAnalyzer(letter);
+		out.println(test);   //A
 		test.isUpper();
 		test.isLower();
 		test.isNumber();
 		test.getASCII();
-		System.out.println(test);
+		test.toString();
 
 		//add more test cases
 		

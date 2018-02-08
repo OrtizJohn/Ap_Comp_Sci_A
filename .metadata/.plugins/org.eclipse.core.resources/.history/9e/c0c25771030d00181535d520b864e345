@@ -14,8 +14,11 @@ public class Lab05d
 		Scanner keyboard = new Scanner(System.in);
 		
 		out.print("Enter a letter :: ");
+		out.println("CHECK 1");
 		char letter = keyboard.next().charAt(0);
-		CharacterAnalyzer test = new CharacterAnalyzer(letter);  //A
+		CharacterAnalyzer test = new CharacterAnalyzer(letter);
+		out.println("CHECK 2");
+		out.println(test);   //A
 		test.isUpper();
 		test.isLower();
 		test.isNumber();

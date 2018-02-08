@@ -13,12 +13,14 @@ public class CharacterAnalyzer
 
 	public CharacterAnalyzer()
 	{
-		setChar(' ');
+
+
 	}
 
 	public CharacterAnalyzer(char c)
 	{
-		setChar(c);
+
+
 	}
 
 	public void setChar(char c)
@@ -46,6 +48,7 @@ public class CharacterAnalyzer
 
 	public boolean isLower( )
 	{
+		out.println((int)theChar);
 		if((int)theChar >= 97 && (int)theChar <=122){
 
 			return true;
