@@ -46,10 +46,10 @@ public class StringChecker
 
 	public boolean findSubString(String s)
 	{
-		int length = s.length();
-		if (word.indexOf(s) != -1){
-			int s1 =  word.indexOf(s);
-			String sstring = word.substring(s1,s1 + length);
+		int length = s.length()-1;
+		int s1 =  word.indexOf(s);
+		String sstring = word.substring(s1,s1 + length);
+		if (sstring.equals(s1)){
 			return true;			
 			
 		}

@@ -39,7 +39,7 @@ public class Name
 	public String getLast()
 	{
 		int indexnum =name.indexOf(' ');
-		String sLast = name.substring(indexnum + 1, name.length());
+		String sLast = name.substring(indexnum, name.length());
 		return sLast;
 	}
 

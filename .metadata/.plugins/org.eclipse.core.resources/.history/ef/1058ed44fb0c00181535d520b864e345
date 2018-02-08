@@ -18,7 +18,7 @@ public class StringChecker
 
 	public StringChecker(String s)
 	{
-		word = s;
+
 
 	}
 
@@ -29,41 +29,22 @@ public class StringChecker
 
 	public boolean findLetter(char c)
 	{
-		char c1 = (char) word.indexOf(c);
-		char cstring = word.charAt(c1);
-		if (cstring == c){
-			return true;			
-			
-		}
-		else{
-			return false;
-		}
 
 
 
-		
+		return false;
 	}
 
 	public boolean findSubString(String s)
 	{
-		int length = s.length();
-		if (word.indexOf(s) != -1){
-			int s1 =  word.indexOf(s);
-			String sstring = word.substring(s1,s1 + length);
-			return true;			
-			
-		}
-		else{
-			return false;
-		}
 
 
 
-		
+		return false;
 	}
 
  	public String toString()
  	{
- 		return word;
+ 		return "\n\n";
 	}
 }
