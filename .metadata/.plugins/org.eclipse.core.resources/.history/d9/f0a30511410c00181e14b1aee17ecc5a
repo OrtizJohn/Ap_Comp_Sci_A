@@ -18,21 +18,18 @@ public class Name
 
 	public Name(String s)
 	{
-		name = s;
 
 
 	}
 
    public void setName(String s)
    {
-	   name = s;
+
 
    }
 
 	public String getFirst()
 	{
-		int indexnum = name.indexOf(' ');
-		String sfirst= name.substring(0,indexnum);
 		return "";
 	}
 
