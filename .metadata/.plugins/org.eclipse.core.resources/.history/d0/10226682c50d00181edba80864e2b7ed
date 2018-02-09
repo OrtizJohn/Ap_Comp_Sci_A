@@ -22,7 +22,8 @@ public class Lab05d
 		test.getASCII();
 		System.out.println(test);
 
-
+		//add more test cases
+		
 		
 		
 		

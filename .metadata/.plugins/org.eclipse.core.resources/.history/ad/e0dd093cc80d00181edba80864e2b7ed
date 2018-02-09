@@ -42,31 +42,6 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
-		else if (statement.indexOf("cat") >= 0
-				|| statement.indexOf("dog") >= 0)
-		{
-			response = "Tell me more about your pets.";
-		}
-		else if (statement.indexOf("Mr. Mauro") >= 0)
-		{
-			response = "He sounds like an amazing teacher!";
-		}
-		else if (statement.indexOf("basketball") >= 0)
-		{
-			response = "That seems like a really cool sport.";
-		}
-		else if (statement.indexOf("bazinga") >= 0)
-		{
-			response = "That really hurts, why would you be so mean?";
-		}
-		else if (statement.indexOf("chicken") >= 0)
-		{
-			response = "Chicken tenders are yummy!";
-		}
-		else if (statement.length() <= 0)
-		{
-			response = "Say something, or else...";
-		}
 		else
 		{
 			response = getRandomResponse();
@@ -80,7 +55,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 6;
+		final int NUMBER_OF_RESPONSES = 4;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -100,14 +75,6 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
-		}
-		else if (whichResponse == 4)
-		{
-			response = "Anything else you want to say?";
-		}
-		else if (whichResponse == 5)
-		{
-			response = "Cool!";
 		}
 
 		return response;

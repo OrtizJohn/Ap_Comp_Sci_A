@@ -51,18 +51,6 @@ public class Magpie2
 		{
 			response = "He sounds like an amazing teacher!";
 		}
-		else if (statement.indexOf("basketball") >= 0)
-		{
-			response = "That seems like a really cool sport.";
-		}
-		else if (statement.indexOf("bazinga") >= 0)
-		{
-			response = "That really hurts, why would you be so mean?";
-		}
-		else if (statement.indexOf("chicken") >= 0)
-		{
-			response = "Chicken tenders are yummy!";
-		}
 		else if (statement.length() <= 0)
 		{
 			response = "Say something, or else...";
