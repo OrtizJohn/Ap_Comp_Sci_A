@@ -1,0 +1,27 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import static java.lang.System.*;
+
+import java.util.Scanner;
+
+public class Lab08g
+{
+	public static void main ( String[] args )
+	{
+		System.out.println ("Beginning number: ");
+		Scanner in = new Scanner (System.in);
+		String statement = in.nextLine();
+		
+		
+		
+		
+		
+		
+		
+					
+	}
+}

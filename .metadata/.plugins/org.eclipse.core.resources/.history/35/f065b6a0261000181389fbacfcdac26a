@@ -1,0 +1,36 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  -
+
+import static java.lang.System.*;
+
+import java.util.Scanner;
+
+public class Lab08g
+{
+	public static void main ( String[] args )
+	{
+		System.out.println ("Beginning number: ");
+		Scanner in = new Scanner (System.in);
+		String beginnum = in.nextLine();
+		int beg = Integer.parseInt(beginnum);
+		System.out.println ("Ending number: ");
+		String endnum = in.nextLine();
+		int end = Integer.parseInt(endnum);
+		LoopStats loop = new LoopStats(beg, end);
+		out.println(loop.toString());
+		out.println(loop.getTotal());
+		out.println(loop.getEvenCount());
+		out.println(loop.getOddCount());
+		
+		
+		
+		
+		
+		
+		
+					
+	}
+}
