@@ -10,9 +10,7 @@ public class Lab09f
 {
 	public static void main( String args[] )
 	{
-		LetterRemover l = new LetterRemover("sdsdsssssssssssssssfdafd",'s');
-		l.removeLetters();
-		out.println(l.toString());
+		//add test cases
 		
 		
 											

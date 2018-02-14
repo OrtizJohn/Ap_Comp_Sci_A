@@ -13,8 +13,6 @@ public class Lab08i
 	{
 		Prime p1 = new Prime(6);
 		out.println(p1.toString());
-		p1.setPrime(7);
-		out.println(p1.toString());
 		
 		
 		
