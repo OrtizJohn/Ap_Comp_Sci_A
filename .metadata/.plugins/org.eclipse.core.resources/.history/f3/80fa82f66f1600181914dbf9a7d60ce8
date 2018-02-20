@@ -13,6 +13,7 @@ public class Lab10e
 	{
 		
 		Scanner keyboard = new Scanner(System.in);
+		//char response = keyboard.next().charAt(0);
 		System.out.println("Guessing Game - How many numbers? ");
 		int num = keyboard.nextInt();
 		GuessingGame g = new GuessingGame(num);
