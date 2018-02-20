@@ -10,7 +10,6 @@ public class Lab11c
 {
    public static void main( String args[] )
    {
-	   TriangleThree l = new TriangleThree();
 
 
 
