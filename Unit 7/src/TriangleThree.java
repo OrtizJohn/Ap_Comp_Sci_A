@@ -29,15 +29,26 @@ public class TriangleThree
 
 	public String getLetter()
 	{
-		for (int i = 0; i <size+1; i++){
-			
-		}
-		return "#";
+		
+		return letter;
 	}
 
 	public String toString()
 	{
+		
 		String output="";
+		for (int i = 0; i <size; i++){
+			for (int j = 1; j<size-i;j++){
+				output += " ";
+				
+			}
+			for (int k = 0;k<i+1; k++){
+				output += getLetter();
+			}
+			
+			output += "\n";
+		}
 		return output+"\n";
+		
 	}
 }
