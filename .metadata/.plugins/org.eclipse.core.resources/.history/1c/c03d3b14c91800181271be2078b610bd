@@ -40,12 +40,14 @@ public class RomanNumeral
 	public Integer getNumber()
 	{
 		number = 0;
-		
+		System.out.println(roman);
 		for (int i = 0; i<LETTERS.length; i++){
-			while (roman.indexOf(LETTERS[i]) == 0){
+			System.out.println(roman.indexOf(NUMBERS[i]));
+			while (roman.indexOf(NUMBERS[i])== 0){
+				//System.out.println("HI");
 				number += NUMBERS[i];
 				roman = roman.substring(LETTERS[i].length());
-				
+				//System.out.println(roman);
 			}
 		}
 		return number;

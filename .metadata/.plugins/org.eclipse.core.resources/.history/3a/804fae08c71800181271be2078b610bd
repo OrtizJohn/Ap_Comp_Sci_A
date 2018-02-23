@@ -39,21 +39,12 @@ public class RomanNumeral
 
 	public Integer getNumber()
 	{
-		number = 0;
-		
-		for (int i = 0; i<LETTERS.length; i++){
-			while (roman.indexOf(LETTERS[i]) == 0){
-				number += NUMBERS[i];
-				roman = roman.substring(LETTERS[i].length());
-				
-			}
-		}
 		return number;
 	}
 
 	public String toString()
 	{
-		roman = "";
+		System.out.println(roman);
 		for (int i = 0; i<NUMBERS.length; i++){
 			while(number>=NUMBERS[i]){
 				roman += LETTERS[i];
