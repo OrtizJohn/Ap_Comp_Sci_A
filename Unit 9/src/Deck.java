@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -78,14 +79,10 @@ public class Deck {
 			return null;
 		}
 		else{
-			Card c = cards[0];
-			Card[] newCards = cards;
-			for (int i = 1; i < size; i++){
-				newCards[i-1] = cards[i];
-			}
-			cards = newCards;
-
-			return c;
+			size--;
+			return cards[size];
+			
+			
 			
 		}
 	}

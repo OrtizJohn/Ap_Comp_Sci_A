@@ -22,6 +22,7 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="H:\APCSA\Unit9_Activities1-3\Unit9_Activities1-3"/>
 			<item value="H:\APCSA\Unit8\Unit8-2016\Unit8-Assignments"/>
 			<item value="H:\APCSA\Unit7\Unit7-2016\Unit7-Assignments"/>
 			<item value="H:\APCSA\Unit6\Unit6-2016\Unit6-Assignments"/>

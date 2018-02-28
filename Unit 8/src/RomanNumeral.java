@@ -8,7 +8,7 @@ import static java.lang.System.*;
 
 public class RomanNumeral
 {
-	private Integer number;
+	private int number;
 	private String roman;
 
 	private final static int[] NUMBERS= {1000,900,500,400,100,90,
