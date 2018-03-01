@@ -1,5 +1,6 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * The Deck class represents a shuffled deck of cards.
@@ -30,15 +31,14 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
-		size = ranks.length * suits.length;
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		size = ranks.length;
 		cards = new Card[size];
-		int count = 0;
-		for (int i = 0; i < ranks.length; i++) {
-			for (int j = 0; j < suits.length; j++) {
-				cards[count] = new Card(ranks[i], suits[j], values[i]);
-				count++;
-			}
+		for(int i = 0; i < size; i++){
+			cards[i] = new Card(ranks[i], suits[i], values[i]);
 		}
+		
+		
 	}
 
 
@@ -47,6 +47,7 @@ public class Deck {
 	 * @return true if this deck is empty, false otherwise.
 	 */
 	public boolean isEmpty() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		if (size == 0){
 			return true;
 		}
@@ -58,6 +59,7 @@ public class Deck {
 	 * @return the number of undealt cards in this deck.
 	 */
 	public int size() {
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 		return size;
 	}
 
@@ -66,13 +68,7 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		for (int k = 0; k < cards.length; k++) {
-			int random = (int) (Math.random() * (cards.length - 1) + 1);
-			Card tempCard = new Card("", "", 0);
-			tempCard = cards[k];
-			cards[k] = cards[random];
-			cards[random] = tempCard;
-		}
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
 	}
 
 	/**
@@ -81,15 +77,18 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		
-		if (isEmpty()){
+		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		if (size() == 0){
 			return null;
 		}
 		else{
-			size = size - 1;
+			size--;
 			return cards[size];
+			
+			
+			
 		}
-	}	
+	}
 
 	/**
 	 * Generates and returns a string representation of this deck.
@@ -99,6 +98,7 @@ public class Deck {
 	public String toString() {
 		String rtn = "size = " + size + "\nUndealt cards: \n";
 
+		
 		for (int k = size - 1; k >= 0; k--) {
 			rtn = rtn + cards[k];
 			if (k != 0) {
@@ -126,5 +126,3 @@ public class Deck {
 		return rtn;
 	}
 }
-
-
