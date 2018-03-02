@@ -1,0 +1,27 @@
+
+public class LabAssesment {
+	public static void main(String args[]){
+		isGoofy(25);
+		
+	}
+	
+	public static boolean isGoofy(int num){
+		
+		int number = num;
+		int count = 0;
+		int dig1 = 0;
+		System.out.println(number);
+		while (number > 10){
+			dig1 = number/10;
+			count += 1;
+		}
+		System.out.println(dig1);
+		
+		
+		
+		return true;
+		
+	}
+	
+
+}

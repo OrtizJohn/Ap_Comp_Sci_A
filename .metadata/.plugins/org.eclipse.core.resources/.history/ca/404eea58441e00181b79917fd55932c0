@@ -1,0 +1,21 @@
+
+public class LabAssesment {
+	public static void main(String args[]){
+		isGoofy(15);
+		
+	}
+	
+	public static boolean isGoofy(int num){
+		
+		int number = num;
+		System.out.println(number);
+		while (number % 10 > 0 ) {
+		    number = number / 10;
+		}
+		System.out.println(number);
+		return true;
+		
+	}
+	
+
+}
