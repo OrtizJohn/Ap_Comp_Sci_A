@@ -1,0 +1,152 @@
+//© A+ Computer Science  -  www.apluscompsci.com
+//Name -
+//Date -
+//Class -
+//Lab  - 
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import static java.lang.System.*;
+
+public class MadLib
+{
+	private ArrayList<String> verbs;
+	private ArrayList<String> nouns;
+	private ArrayList<String> adjectives;
+	
+	public MadLib()
+	{
+		verbs = new ArrayList<String>();
+		nouns = new ArrayList<String>();
+		adjectives = new  ArrayList<String>();
+
+
+
+	}
+
+	public MadLib(String fileName)
+	{
+		this();		
+		loadNouns();
+		loadAdjectives();
+		loadVerbs();
+		
+		
+		try{
+			Scanner file = new Scanner(new File(fileName));
+			while(file.hasNext()){
+				if (file.next() == "#"){
+					System.out.print(getRandomNoun() + " ");
+				}
+				else if(file.next() == "@"){
+					System.out.print(getRandomVerb() + " ");
+				}
+				else if(file.next() == "&"){
+					System.out.print(getRandomAdjective()+ " ");
+				}
+				else{
+					System.out.print(file.next() + " ");
+				}
+				
+			}
+		
+		
+		
+		
+		
+		
+		
+	
+		
+		}
+		catch(Exception e)
+		{
+			out.println("Houston we have a problem!");
+		}
+		
+	}
+
+	public void loadNouns()
+	{
+		try{
+		Scanner scan = new Scanner(new File("nouns.dat"));
+		while(scan.hasNextLine()){
+			nouns.add(scan.nextLine());
+			
+		}
+		
+		
+		
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}	
+		
+		
+	}
+	
+	public void loadVerbs()
+	{
+		try{
+		Scanner scan = new Scanner(new File("verbs.dat"));
+		while(scan.hasNextLine()){
+			verbs.add(scan.nextLine());
+		}
+	
+	
+	
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+	public void loadAdjectives()
+	{
+		try{
+		Scanner scan = new Scanner(new File("adjectives.dat"));
+		while(scan.hasNextLine()){
+			adjectives.add(scan.nextLine());
+		}
+	
+	
+	
+	
+	
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+
+	public String getRandomVerb()
+	{
+	
+		return "";
+	}
+	
+	public String getRandomNoun()
+	{
+		
+		return "";
+	}
+	
+	public String getRandomAdjective()
+	{
+		
+		return "";
+	}		
+
+	public String toString()
+	{
+	   return "\n\n\n";
+	}
+}
