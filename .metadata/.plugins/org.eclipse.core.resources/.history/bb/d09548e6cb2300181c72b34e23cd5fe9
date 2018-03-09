@@ -47,7 +47,10 @@ public class Histogram
 			for(int i = 0; i < numLines; i++){
 				String ln = scan.nextLine();
 				for(int z = 0; z < letters.size(); z++){
-					for(int j = 0; j < ln.length(); j++){	
+					for(int j = 0; j < ln.length(); j++){
+					
+						//System.out.println(ln.charAt(j));
+						//System.out.println(ln.charAt(z));
 						if(ln.charAt(j) == letters.get(z)){
 							count.set(z, count.get(z) + 1);
 						}
