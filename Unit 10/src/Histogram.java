@@ -27,38 +27,70 @@ public class Histogram
 
 	public Histogram(char[] values, String fName)
 	{
-
-
-
-
-
-
+		count = new ArrayList<Integer>();
+		letters = new ArrayList<Character>();
+		fileName = fName;
+		for(int i = 0; i < values.length; i++){
+			letters.add(values[i]);
+			count.add(0);
+		}
 		out.println("search letters = "+letters);
+		
 	}
 
 	public void loadAndAnalyzeFile() throws IOException
 	{
-
-
-
-
-
-
-
-
+		try{
+			Scanner scan = new Scanner(new File(fileName));
+			int numLines = scan.nextInt();
+			scan.nextLine();
+			for(int i = 0; i < numLines; i++){
+				String ln = scan.nextLine();
+				for(int z = 0; z < letters.size(); z++){
+					for(int j = 0; j < ln.length(); j++){
+					
+						//System.out.println(ln.charAt(j));
+						//System.out.println(ln.charAt(z));
+						if(ln.charAt(j) == letters.get(z)){
+							count.set(z, count.get(z) + 1);
+						}
+					}
+				}
+			}
+				
+			
+		}
+		catch(Exception e){
+			System.out.println("Error");
+		}
 	}
 
 	public char mostFrequent()
 	{
-
-		return '#';
+		int a = 0;
+		char c = letters.get(0);
+		for(int i = 0; i < letters.size(); i++){
+			if(count.get(i) > a){
+				c = letters.get(i);
+				a = count.get(i);
+			}
+		}
+		return c;
+		
 	}
 
 	public char leastFrequent()
 	{
-
-
-		return '#';
+		int a = Integer.MAX_VALUE;
+		char c = letters.get(0);
+		for(int i = 0; i < letters.size(); i++){
+			if(count.get(i) < a){
+				c = letters.get(i);
+				a = count.get(i);
+			}
+		}
+		return c;
+		
 	}
 
 	public String toString()
