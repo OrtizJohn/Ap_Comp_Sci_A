@@ -22,7 +22,6 @@ public class Student
 	
 	public Student(String name, String gradeList)
 	{
-		myGrades = new Grades(gradeList);
 		setName(name);
 		setGrades(gradeList);
 	}
@@ -87,8 +86,6 @@ public class Student
 	
 	public String toString()
 	{
-		String output = "";
-		output += getName() + " = " + myGrades;
-		return output;
+		return "";
 	}	
 }
