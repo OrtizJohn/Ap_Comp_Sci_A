@@ -119,6 +119,7 @@ public class Class
 		String output=""+getClassName()+"\n";
 		for (int i = 0; i<studentList.length;i++){
 			output += studentList[i] + "  " + studentList[i].getAverage()+ "\n"; 
+			;
 		}
 
 
