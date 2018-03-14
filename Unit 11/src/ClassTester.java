@@ -19,6 +19,8 @@ public class ClassTester
 		test.addStudent(2,new Student("Fred","4 - 50 50 70 68"));				
 		out.println(test);
 		
+		test.sort();
+		out.println(test);
 		out.println(String.format(test.getStudentName(0) + "\'s average = %.2f",test.getStudentAverage(0)));	
 		out.println(String.format(test.getStudentName(1) + "\'s average = %.2f",test.getStudentAverage(1)));	
 		out.println(String.format(test.getStudentName(2) + "\'s average %.2f",test.getStudentAverage(2)));	
@@ -29,6 +31,7 @@ public class ClassTester
 		out.println("Highest Average = " + test.getStudentWithHighestAverage());
 		out.println("Lowest Average = " + test.getStudentWithLowestAverage());
 								
-		out.println(String.format("Class Average = %.2f",test.getClassAverage()));									
+		out.println(String.format("Class Average = %.2f",test.getClassAverage()));
+	
 	}		
 }
