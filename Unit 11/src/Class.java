@@ -1,10 +1,11 @@
-//© A+ Computer Science  -  www.apluscompsci.com
+//Â© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
 //Class -
 //Lab  -
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 import static java.lang.System.*;
 import static java.util.Arrays.*;
@@ -77,7 +78,7 @@ public class Class
 
 	public String getStudentWithHighestAverage()
 	{
-		double high = Double.MIN_VALUE;
+		/**double high = Double.MIN_VALUE;
 		String hName ="";
 		for(int i= 0; i<studentList.length;i++){
 			if(studentList[i].getAverage()> high){
@@ -85,12 +86,20 @@ public class Class
 				hName = studentList[i].getName();
 			}
 		}
-		return hName;
+		return hName;**/
+		
+		int index = 0;
+		for(int i= 0; i<studentList.length-1;i++){
+			if(studentList[i].compareTo(studentList[i+1]) == 1){
+				index = i;
+			}
+		}
+		return studentList[index].getName();
 	}
 
 	public String getStudentWithLowestAverage()
 	{
-		double low = Double.MAX_VALUE;
+		/*double low = Double.MAX_VALUE;
 		String hName ="";
 		for(int i= 0; i<studentList.length;i++){
 			if(studentList[i].getAverage()< low){
@@ -98,7 +107,15 @@ public class Class
 				hName = studentList[i].getName();
 			}
 		}
-		return hName;
+		return hName;*/
+		
+		int index = 0;
+		for(int i= 0; i<studentList.length-1;i++){
+			if(studentList[i].compareTo(studentList[i+1]) == -1){
+				index  = i;
+			}
+		}
+		return studentList[index].getName();
 
 	}
 	
@@ -112,6 +129,11 @@ public class Class
 		}
 
 		return output;
+	}
+	
+	public void sort(){
+		Arrays.sort(studentList);
+		
 	}
 	
 	public String toString()
