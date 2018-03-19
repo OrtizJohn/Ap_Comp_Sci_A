@@ -17,26 +17,29 @@ public class Lab18d
 	{
 		Scanner file = new Scanner(new File("C:\\Users\\ortizj4473\\Desktop\\JohnOrtizAp-Compsci-REAL\\Unit 12\\src\\lab18d.dat"));
 
+		ArrayList<Word> words = new ArrayList<Word>();
 		int size = file.nextInt();
 		file.nextLine();
-		Word[] list = new Word[size];
-		for(int i = 0; i < size; i++) {
-			list[i] = new Word(file.next());
-		} file.close();
 		
-		for(int i = 0; i < list.length; i++) {
-			for(int j = 0; j < list.length-1; j++) {
-				if(list[j].compareTo(list[j+1]) == -1) {
-					Word t = list[j];
-					list[j] = list[j+1];
-					list[j+1] = t;
+		while (file.hasNextLine())
+		{
+			words.add(new Word(file.nextLine()));
+		}
+		for(int i = 0; i < size; i++){
+			for(int j = 0; j < i; j ++){
+				if(words.get(i).compareTo(words.get(j)) == -1)
+				{
+					Word temp = words.get(i);
+					words.set(i, words.get(j));
+					words.set(j, temp);
 				}
 			}
 		}
+	
 		
-		for(int i = 0; i < list.length; i++)
+		for(int i = 0; i < words.size(); i++)
 		{
-			out.println(list[i]);
+			out.println(words.get(i));
 		}
 
 

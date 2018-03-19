@@ -21,16 +21,18 @@ public class Word implements Comparable<Word>
 
 	public int compareTo( Word rhs )
 	{
-		if(this.toString().length() > rhs.toString().length()){
-			return 1;
+		Word other = (Word)rhs;
+		if(word.length() < other.toString().length()) return 1;
+		if(word.length() > other.toString().length()) return -1;
+		for (int i = 0; i < word.length(); i++){
+			if ((int)word.charAt(i) < (int)other.toString().charAt(i)){
+				return 1;
+			}
+			else if ((int)word.charAt(i) > (int)other.toString().charAt(i)){
+				return -1;
+			}
 		}
-		else if(this.toString().length() < rhs.toString().length()){
-			return -1;
-		}
-		else{
-			return this.toString().compareTo(rhs.toString());
-		}
-		
+		return 0;
 	}
 
 	public String toString()

@@ -18,28 +18,35 @@ public class Lab18e
 		
 		Scanner file = new Scanner(new File("C:\\Users\\ortizj4473\\Desktop\\JohnOrtizAp-Compsci-REAL\\Unit 12\\src\\lab18e.dat"));
 
-		
+		ArrayList<Word2> words = new ArrayList<Word2>();
 		int size = file.nextInt();
 		file.nextLine();
-		Word2[] list = new Word2[size];
-		for(int i = 0; i < size; i++) {
-			list[i] = new Word2(file.next());
-		} file.close();
 		
-		for(int i = 0; i < list.length; i++) {
-			for(int j = 0; j < list.length-1; j++) {
-				if(list[j].compareTo(list[j+1]) == -1) {
-					Word2 t = list[j];
-					list[j] = list[j+1];
-					list[j+1] = t;
+		while (file.hasNextLine())
+		{			
+			words.add(new Word2(file.nextLine()));
+		}
+		
+		for (int i = 0; i<size;i++){
+			for (int j = 0; j<i; j++){
+				String str = words.get(i).toString();
+				Word2 w2 = new Word2(str);
+				if(words.get(i).compareTo(words.get(j)) == -1)
+				{
+					Word2 temp = words.get(i);
+					words.set(i, words.get(j));
+					words.set(j, temp);
 				}
 			}
+			
 		}
-				
-		for(int i = 0; i < list.length; i++){
-			out.println(list[i]);
-		}
+
 	
+		
+		for(int i = 0; i < words.size(); i++)
+		{
+			out.println(words.get(i));
+		}
 
 
 
