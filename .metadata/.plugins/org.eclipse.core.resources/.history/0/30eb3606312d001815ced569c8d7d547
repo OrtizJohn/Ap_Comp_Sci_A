@@ -74,11 +74,7 @@ public class ElevensBoard extends Board {
 	@Override
 	public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-		List<Integer>indexes = cardIndexes();
-		if (!containsPairSum11(indexes)){
-			return containsJQK(indexes);
-		}
-		return true;
+		return isLegal(cardIndexes());
 	}
 
 	/**
@@ -126,10 +122,10 @@ public class ElevensBoard extends Board {
 				hasJack = true;
 			}
 			else if(cardAt(selectedCards.get(i)).rank() == "queen"){
-				hasQueen = true;
+				hasJack = true;
 			}
 			else if(cardAt(selectedCards.get(i)).rank() == "king"){
-				hasKing = true;
+				hasQueen = true;
 			}
 		}
 		return (hasJack && hasQueen && hasKing);

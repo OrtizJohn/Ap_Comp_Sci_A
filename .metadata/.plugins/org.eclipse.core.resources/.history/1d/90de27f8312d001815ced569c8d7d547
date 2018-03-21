@@ -126,10 +126,10 @@ public class ElevensBoard extends Board {
 				hasJack = true;
 			}
 			else if(cardAt(selectedCards.get(i)).rank() == "queen"){
-				hasQueen = true;
+				hasJack = true;
 			}
 			else if(cardAt(selectedCards.get(i)).rank() == "king"){
-				hasKing = true;
+				hasQueen = true;
 			}
 		}
 		return (hasJack && hasQueen && hasKing);
