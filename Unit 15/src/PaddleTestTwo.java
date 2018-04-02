@@ -6,45 +6,30 @@
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Graphics2D;
+
 import java.awt.Canvas;
-import java.awt.event.ActionEvent;
+
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import static java.lang.Character.*;
-import java.awt.image.BufferedImage;
-import java.awt.event.ActionListener;
+
+
+
 
 public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 {
+	private static final long serialVersionUID = 1L;
 	private Ball ball;
 	private Paddle leftPaddle;
-	private boolean[] keys;		//keeps track of what keys are pressed
-
+	private Paddle rightPaddle;
+	private boolean[] keys;		
 	public PaddleTestTwo()
 	{
-		//set up all game variables
+		ball = new Ball();
+		leftPaddle = new Paddle(10,250,10,50,4);
+		rightPaddle = new Paddle(760,250,10,50,4);
+		keys = new boolean[4];
 
-
-		//instantiate a Ball
-		
-		
-		
-		//instantiate a left Paddle
-		
-		
-		
-		
-		//instantiate a right Paddle
-		
-		
-		
-
-
-		keys = new boolean[5];
-
-
-		//set up the Canvas
 		setBackground(Color.WHITE);
 		setVisible(true);
 
@@ -61,35 +46,34 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 	{
 		ball.moveAndDraw(window);
 		leftPaddle.draw(window);
+		rightPaddle.draw(window);
 
-		if(!(ball.getX()>=10 && ball.getX()<=550))
+		if(!(ball.getX()>=10 && ball.getX()<=760))
 		{
 			ball.setXSpeed(-ball.getXSpeed());
 		}
 
-		if(!(ball.getY()>=10 && ball.getY()<=450))
+		if(!(ball.getY()>=10 && ball.getY()<=540))
 		{
 			ball.setYSpeed(-ball.getYSpeed());
 		}
 
 		if(keys[0] == true)
 		{
-			//move left paddle up and draw it on the window
 			leftPaddle.moveUpAndDraw(window);
 		}
 		if(keys[1] == true)
 		{
-			//move left paddle down and draw it on the window
-
+			leftPaddle.moveDownAndDraw(window);
 
 		}
 		if(keys[2] == true)
 		{
-
+			rightPaddle.moveUpAndDraw(window);
 		}
 		if(keys[3] == true)
 		{
-
+			rightPaddle.moveDownAndDraw(window);
 		}
 	}
 
@@ -117,20 +101,21 @@ public class PaddleTestTwo extends Canvas implements KeyListener, Runnable
 
 	public void keyTyped(KeyEvent e)
 	{
-		//no code needed here
+
 	}
 	
    public void run()
    {
-   	try
-   	{
-   		while(true)
+   		try
    		{
-   		   Thread.currentThread().sleep(8);
-            repaint();
-         }
-      }catch(Exception e)
-      {
-      }
+   			while(true)
+   			{
+   				Thread.currentThread();
+				Thread.sleep(8);
+   				repaint();
+   			}
+   		} catch(Exception e) {
+   			System.out.println("oops");
+   		}
   	}		
 }
