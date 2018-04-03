@@ -4,13 +4,15 @@
 //Class -
 //Lab  -
 
+
 import java.awt.Color;
-import java.awt.Graphics;
-import java.util.Random;
+//import java.awt.Graphics;
+//import java.util.Random;
 
-class SpeedUpBall extends Ball
+
+
+public class SpeedUpBall extends Ball implements Collidable
 {
-
 	private int xSpeed;
 	private int ySpeed;
 
@@ -43,7 +45,7 @@ class SpeedUpBall extends Ball
 		super(x, y, wid, ht, col, xSpd, ySpd);
    	}
 	
-
+	//SET METHODS
 	public void setXSpeed(int xSpd) {
 		xSpeed = xSpd;
 	}
@@ -52,7 +54,7 @@ class SpeedUpBall extends Ball
 		ySpeed = ySpd;
 	}
 	
-
+	//GET METHODS
 	public int getXSpeed() {
 		return xSpeed;
 	}
@@ -60,7 +62,8 @@ class SpeedUpBall extends Ball
 	public int getYSpeed() {
 		return ySpeed;
 	}
-
+	
+	//METHODs
 	public void incSpeed()
 	{
 		if(getXSpeed() < 0) {
@@ -76,4 +79,3 @@ class SpeedUpBall extends Ball
 		}
 	}
 }
-
