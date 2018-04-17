@@ -224,7 +224,55 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+  public void mirrorArms(){
+	  int mirror = 220;
+		Pixel origUpperPixel = null;
+		Pixel newLowerPixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+
+		for (int row = 159; row < 194; row++) {
+			for (int col = 104; col < 170; col++) {
+				origUpperPixel = pixels[row][col];
+				newLowerPixel = pixels[mirror - row + mirror][col];
+				newLowerPixel.setColor(origUpperPixel.getColor());
+			}
+
+			for (int col = 239; col < 295; col++) {
+				origUpperPixel = pixels[row][col];
+				newLowerPixel = pixels[mirror - row + mirror][col];
+				newLowerPixel.setColor(origUpperPixel.getColor());
+			}
+		}
+  }
+	public void mirrorGull() {
+		int mirror = 350;
+		Pixel origLeftPixel = null;
+		Pixel newRightPixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+
+		for (int row = 230; row < 327; row++) {
+			for (int col = 230; col < 348; col++) {
+				origLeftPixel = pixels[row][col];
+				newRightPixel = pixels[row][mirror - col + mirror];
+				newRightPixel.setColor(origLeftPixel.getColor());
+			}
+		}
+	}
+	public void mirrorDiagonal() {
+		Pixel origPixel = null;
+		Pixel newPixel = null;
+		Pixel[][] pixels = this.getPixels2D();
+
+		for (int row = 0; row < pixels.length; row++) {
+			for (int col = 0; col < pixels[0].length; col++) {
+				if (col < pixels.length) {
+					origPixel = pixels[col][row];
+					newPixel = pixels[row][col];
+					newPixel.setColor(origPixel.getColor());
+				}
+			}
+		}
+	}
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture

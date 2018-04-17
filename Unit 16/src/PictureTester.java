@@ -47,6 +47,7 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
+    swan.explore();
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -93,9 +94,34 @@ public class PictureTester
 	  water.explore();
 	  
   }
-  
+  public static void testMirrorArms(){
+		Picture snowman = new Picture("snowman.jpg");
+		snowman.explore();
+		snowman.mirrorArms();
+		snowman.explore();
+	  
+  }
+  public static void testMirrorGull() {
+		Picture seagull = new Picture("seagull.jpg");
+		seagull.explore();
+		seagull.mirrorGull();
+		seagull.explore();
+	}
+
+	public static void testMirrorDiagonal() {
+		Picture beach = new Picture("beach.jpg");
+		beach.explore();
+		beach.mirrorDiagonal();
+		beach.explore();
+	}
+	public static void testCopy() {
+		Picture beach = new Picture("beach.jpg");
+		beach.explore();
+		beach.copy(beach, 0, 320);
+		beach.explore();
+	}
   /** Main method for testing.  Every class can have a main
-    * method in Java */
+    * method in Java mirror*/
   public static void main(String[] args)
   {
     // uncomment a call here to run a test
@@ -108,15 +134,15 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-	  
     //testMirrorVertical(); 
-    testMirrorTemple();
+    //testMirrorTemple(); 
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+	//testCollage();
     //testCopy();
     //testEdgeDetection();
+    
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();

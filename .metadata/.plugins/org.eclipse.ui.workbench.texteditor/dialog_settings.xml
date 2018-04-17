@@ -8,6 +8,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="fi"/>
 			<item value="System.out"/>
 			<item value="System"/>
 			<item value="SpeedUpBall5"/>
@@ -15,7 +16,6 @@
 			<item value="create"/>
 			<item value="drawL"/>
 			<item value="wall"/>
-			<item value="wall.getBottom()"/>
 		</list>
 		<list key="replacehistory">
 			<item value="550"/>
