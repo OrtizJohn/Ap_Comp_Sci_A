@@ -33,7 +33,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 	public OuterSpace() {
 		setBackground(Color.black);
 
-		keys = new boolean[5];
+		keys = new boolean[256];
 
 		ship = new Ship(400, 500, 35, 35, 2);
 		
@@ -90,6 +90,10 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 				tick = 0;
 			}
 		}
+		if (keys[5] == true) {
+				shots.add(new Laser(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
+		}
+		
 
 		// update
 		horde.moveEmAll();
@@ -127,8 +131,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			keys[3] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_A) { // I used 'a' because space is buggy for no reason
+		if (e.getKeyCode() == KeyEvent.VK_A) {
 			keys[4] = true;
+		}
+		if (e.getKeyCode() == KeyEvent.VK_S) {
+			keys[5] = true;
 		}
 	}
 
@@ -145,8 +152,11 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) {
 			keys[3] = false;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_A) { // I used 'a' because space is buggy (try it)
+		if (e.getKeyCode() == KeyEvent.VK_A) { 
 			keys[4] = false;
+		}
+		if (e.getKeyCode() == KeyEvent.VK_S) { 
+			keys[5] = false;
 		}
 	}
 

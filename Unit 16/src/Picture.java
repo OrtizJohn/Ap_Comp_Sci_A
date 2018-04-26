@@ -22,10 +22,11 @@ public class Picture extends SimplePicture
    */
   public Picture ()
   {
+	super();
     /* not needed but use it to show students the implicit call to super()
      * child constructors always call a parent constructor 
      */
-    super();  
+      
   }
   
   /**
@@ -325,6 +326,7 @@ public class Picture extends SimplePicture
   /** Method to show large changes in color 
     * @param edgeDist the distance for finding edges
     */
+  
   public void edgeDetection(int edgeDist)
   {
     Pixel leftPixel = null;
@@ -347,6 +349,41 @@ public class Picture extends SimplePicture
       }
     }
   }
+  public void blur(int x,int y, int w, int h){
+
+	System.out.println("John Ortiz");
+	System.out.println("Period 2");
+	System.out.println("4/24/18");
+	System.out.println("Computer 35");
+
+	 
+	  
+	Pixel[][] pixels = this.getPixels2D(); 
+	for (int i=x;i<x+w;i++){
+		for (int j = w; j < w+h;j++){
+			
+			int avgBlue = ((pixels[i][j+1].getBlue()+pixels[i+1][j].getBlue()+pixels[i-1][j].getBlue()+pixels[i][j-1].getBlue()+pixels[i+1][j+1].getBlue()+pixels[i-1][j+1].getBlue()+pixels[i+1][j-1].getBlue()+pixels[i-1][j-1].getBlue())/8);
+			int avgGreen = ((pixels[i][j+1].getGreen()+pixels[i+1][j].getGreen()+pixels[i-1][j].getGreen()+pixels[i][j-1].getGreen()+pixels[i+1][j+1].getGreen()+pixels[i-1][j+1].getGreen()+pixels[i+1][j-1].getGreen()+pixels[i-1][j-1].getGreen())/8);
+	    	int avgRed = ((pixels[i][j+1].getRed()+pixels[i+1][j].getRed()+pixels[i-1][j].getRed()+pixels[i][j-1].getRed()+pixels[i+1][j+1].getRed()+pixels[i-1][j+1].getRed()+pixels[i+1][j-1].getRed()+pixels[i-1][j-1].getRed())/8);	    		
+	    	pixels[i][j].setBlue(avgBlue);
+	    	pixels[i][j].setGreen(avgGreen);
+	    	pixels[i][j].setRed(avgRed);
+	    }
+	}
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   /* Main method for testing - each class in Java can have a main 
