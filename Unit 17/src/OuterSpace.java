@@ -71,7 +71,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 
 		tick++;
 
-		// processInputs
+	
 		if (keys[0] == true) {
 			ship.move("LEFT");
 		}
@@ -90,31 +90,31 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 				tick = 0;
 			}
 		}
-		if (keys[5] == true) {
-				shots.add(new Laser(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
-		}
 		
 
-		// update
+		
+
+		
 		horde.moveEmAll();
 		shots.moveEmAll();
 		horde.removeDeadOnes(shots.getList());
 		shots.cleanEmUp();
 		horde.checkShipDeath(ship);
+		horde.checkSize(shots,ship);
 
 		if (horde.getSize() == 0) {
 			System.out.println("You win!");
 			System.exit(0);
 		}
 
-		// render
+	
 		graphToBack.setColor(Color.WHITE);
 		graphToBack.drawString(""+horde.getSize(), 740, 530);
 		ship.draw(graphToBack);
 		shots.drawEmAll(graphToBack);
 		horde.drawEmAll(graphToBack);
 
-		// draw back image
+		
 		twoDGraph.drawImage(back, null, 0, 0);
 	}
 
@@ -134,9 +134,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		if (e.getKeyCode() == KeyEvent.VK_A) {
 			keys[4] = true;
 		}
-		if (e.getKeyCode() == KeyEvent.VK_S) {
-			keys[5] = true;
-		}
 	}
 
 	public void keyReleased(KeyEvent e) {
@@ -154,9 +151,6 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable {
 		}
 		if (e.getKeyCode() == KeyEvent.VK_A) { 
 			keys[4] = false;
-		}
-		if (e.getKeyCode() == KeyEvent.VK_S) { 
-			keys[5] = false;
 		}
 	}
 

@@ -47,7 +47,7 @@ public class Ship extends MovingThing {
 
 	public void move(String direction) {
 
-		// remember that 0,0 is in top left of screen
+		
 		if (direction.equals("LEFT")) {
 			setX(getX() - speed);
 		} else if (direction.equals("RIGHT")) {

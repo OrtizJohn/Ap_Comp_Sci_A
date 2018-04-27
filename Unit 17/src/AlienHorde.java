@@ -4,11 +4,7 @@
 //Class -
 //Lab  -
 
-import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.io.File;
-import javax.imageio.ImageIO;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,6 +46,11 @@ public class AlienHorde
 	public void drawEmAll(Graphics window) {
 		for (Alien al : aliens)
 			al.draw(window);
+	}
+	public void checkSize(Bullets shots, Ship ship){
+		if (size <= 23 && size >= 18){
+			shots.add(new Laser(ship.getX() + ship.getWidth() / 2 - 2, ship.getY(), 5));
+		}
 	}
 
 	public void removeDeadOnes(List<Ammo> shots)
