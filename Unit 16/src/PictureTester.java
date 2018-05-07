@@ -123,11 +123,18 @@ public class PictureTester
 	public static void testBlur(int x, int y, int w, int h, int n)
 	{
 	   
-		Picture redMoto = new Picture("beach.jpg");
+		Picture redMoto = new Picture("redMotorcycle.jpg");
+		redMoto.explore();
 	   for (int i = 0; i<n; i++){
 	      redMoto.blur(x,y,w,h);
 	    }
 	   redMoto.explore();
+	}
+	public static void testEncodeAndDecode(){
+		Picture beach = new Picture("beach.jpg");
+		Picture newPic = new Picture("msg.jpg");
+		beach.encode(newPic);
+		beach.explore();
 	}
 
   /** Main method for testing.  Every class can have a main
@@ -138,7 +145,7 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     
-	testBlur(190,160,20,20,10);
+	//testBlur(190,160,20,20,10);
 	//testZeroBlue(); 
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
@@ -157,8 +164,10 @@ public class PictureTester
     
     //testEdgeDetection2();
     //testChromakey();
-    //testEncodeAndDecode();
-    //testGetCountRedOverValue(250);
+	  
+    testEncodeAndDecode();
+    
+	//testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
