@@ -1,0 +1,11 @@
+
+public interface Collidable {
+	boolean didCollideLeft(Object obj);
+	boolean didCollideRight(Object obj);
+	boolean didCollideTop(Object obj);
+	boolean didCollideBottom(Object obj);
+	boolean didCollideLeft1(Object obj);
+	boolean didCollideRight1(Object obj);
+	boolean didCollideTop1(Object obj);
+	boolean didCollideBottom1(Object obj);
+}
