@@ -9,8 +9,8 @@ import java.awt.Component;
 
 public class TheGame extends JFrame
 {
-	private static final int WIDTH = 800;
-	private static final int HEIGHT = 650;
+	public static final int WIDTH = 800;
+	public static final int HEIGHT = 650;
 
 	public TheGame()
 	{
@@ -28,6 +28,6 @@ public class TheGame extends JFrame
 	
 	public static void main( String args[] )
 	{
-		TheGame run = new TheGame();
+		new TheGame();
 	}
 }
