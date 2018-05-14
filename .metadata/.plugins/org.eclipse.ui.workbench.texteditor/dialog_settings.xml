@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="didCollideTop" key="selection"/>
+		<item value="Ball" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Wall"/>
 			<item value="didCollideTop"/>
 			<item value="block"/>
 			<item value="encode"/>
@@ -15,13 +16,12 @@
 			<item value="copy"/>
 			<item value="collage"/>
 			<item value="fi"/>
-			<item value="System.out"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Ball"/>
 			<item value="550"/>
 			<item value="Paddle"/>
 			<item value="Paddles"/>
-			<item value="Ball"/>
 			<item value="pong"/>
 			<item value="Wall"/>
 			<item value="Block"/>

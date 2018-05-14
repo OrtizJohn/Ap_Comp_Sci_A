@@ -9,7 +9,7 @@ import java.awt.Graphics;
 
 
 
-public class Block implements Locatable
+public class Block implements Locatable,Collidable
 {
 	private int xPos;
 	private int yPos;
@@ -119,4 +119,25 @@ public class Block implements Locatable
    	public String toString() {
    		return xPos +" "+ yPos +" "+ width +" "+ height +" "+ color;
    	}
+
+	@Override
+	public boolean didCollideLeft(Block other) {
+		
+		return this.getX() + this.getWidth() >= other.getX();
+	}
+
+	@Override
+	public boolean didCollideRight(Block other) {
+		return this.getX() <= other.getX() + other.getWidth();
+	}
+
+	@Override
+	public boolean didCollideTop(Block other) {
+		return this.getY() + this.getHeight() >= other.getY();
+	}
+
+	@Override
+	public boolean didCollideBottom(Block other) {
+		return this.getY() <= other.getY() + other.getHeight();
+	}
 }

@@ -8,6 +8,7 @@ import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import static java.lang.Character.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.awt.Font;
 
 //import java.awt.event.ActionListener;
@@ -38,6 +39,10 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 	private boolean[] keys;
 	private BufferedImage back;
 	private int Score;
+	private ArrayList<Block> topBlocks = new ArrayList<Block>(); 
+	private ArrayList<Block> bottomBlocks = new ArrayList<Block>(); 
+	private ArrayList<Block> rightBlocks = new ArrayList<Block>(); 
+	private ArrayList<Block> leftBlocks = new ArrayList<Block>(); 
 
 	// starting position of ball
 	private static final int BALL_Xi = 380;
@@ -49,13 +54,14 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		// set up variables
 
 		Paddle = new Paddle(350, 350, 40, 40, Color.BLUE, 4);
+		int xVal = 0;
+		int yVal = 15;
+		int ct = 0;
 		for (int i = 0; i < 3; i++) {
-			int ct = 0;
-			if (ct == 1) {
-				block.setY(block.getY() - 30);
-			}
+			yVal+= 15;
 			for (int j = 0; j < 12; j++) {
-				block = new Block();
+				block = new Block(xVal,yVal,30,15,Color.RED);
+				xVal+=20;			
 
 			}
 		}
@@ -105,6 +111,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		// create a graphics reference to the back ground image
 		// we will draw all changes on the background image
 		Graphics graphToBack = back.createGraphics();
+		block.draw(graphToBack);
 
 
 		// MOVEMENT FOR PADDLES
@@ -135,12 +142,20 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 				}
 
 				// IF BALL COLLIDE PADDLE
-				if (ball.didCollideLeft(Paddle) || ball.didCollideRight(Paddle)) {
+				if(ball.didCollideLeft(Paddle) && ball.didCollideRight(Paddle) && ball.didCollideBottom(Paddle) && ball.didCollideTop(Paddle)){
+					if (ball.didCollideLeft(Paddle) || ball.didCollideRight(Paddle)) {
+						ball.setXSpeed(-ball.getXSpeed());
+					}
+					if (ball.didCollideTop(Paddle) || ball.didCollideBottom(Paddle)) {
+						ball.setYSpeed(-ball.getYSpeed());
+					}
+				}
+				/*if (ball.didCollideLeft(Paddle) || ball.didCollideRight(Paddle)) {
 					ball.setXSpeed(-ball.getXSpeed());
 				}
 				if (ball.didCollideTop(Paddle) || ball.didCollideBottom(Paddle)) {
 					ball.setYSpeed(-ball.getYSpeed());
-				}
+				}*/
 		
 		// update objects
 		ball.update(graphToBack);
@@ -164,6 +179,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 
 		ball.draw(graphToBack, Color.RED);
 		Paddle.draw(graphToBack);
+		block.draw(graphToBack);
 		
 
 		System.out.println(ball.getXSpeed() + " " + ball.getYSpeed());
