@@ -38,7 +38,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 
 	private boolean[] keys;
 	private BufferedImage back;
-	private int Score;
+	private int blocksLeft;
 	private ArrayList<Block> topBlocks = new ArrayList<Block>(); 
 	private ArrayList<Block> bottomBlocks = new ArrayList<Block>(); 
 	private ArrayList<Block> rightBlocks = new ArrayList<Block>(); 
@@ -54,15 +54,52 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		// set up variables
 
 		Paddle = new Paddle(350, 350, 40, 40, Color.BLUE, 4);
-		int xVal = 0;
-		int yVal = 15;
+		
+		int xValTop = 25;
+		int yValTop = 0;
+		
 		int ct = 0;
-		for (int i = 0; i < 3; i++) {
-			yVal+= 15;
-			for (int j = 0; j < 12; j++) {
-				block = new Block(xVal,yVal,30,15,Color.RED);
-				xVal+=20;			
-
+		for (int i = 0; i < 2; i++) {
+			yValTop+= 20;
+			xValTop = 25;
+			for (int j = 0; j < 29; j++) {
+				topBlocks.add(block = new Block(xValTop,yValTop,20,15,Color.RED));
+				blocksLeft++;
+				xValTop+=25;
+		
+			}
+		}
+		int xValBottom = 25;
+		int yValBottom = 480;
+		for (int i = 0; i < 2; i++) {
+			xValBottom = 25;
+			yValBottom +=20; 
+			for (int j = 0; j < 29; j++) {
+				bottomBlocks.add(block = new Block(xValBottom,yValBottom,20,15,Color.RED));
+				blocksLeft++;
+				xValBottom += 25;
+			}
+		}
+		int xValLeft = 25;
+		int yValLeft = 40;
+		for (int i = 0; i < 22; i++) {
+			xValLeft = 25;
+			yValLeft +=20;
+			for (int j = 0; j < 2; j++) {
+				leftBlocks.add(block = new Block(xValLeft,yValLeft,20,15,Color.RED));
+				blocksLeft++;
+				xValLeft += 25;
+			}
+		}
+		int xValRight = 695;
+		int yValRight = 40;
+		for (int i = 0; i < 22; i++) {
+			xValRight = 700;
+			yValRight +=20;
+			for (int j = 0; j < 2; j++) {
+				rightBlocks.add(block = new Block(xValRight,yValRight,20,15,Color.RED));
+				blocksLeft++;
+				xValRight += 25;
 			}
 		}
 		leftWall = new Wall(0, 0, 10, 550, Color.BLACK);
@@ -70,7 +107,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		bottomWall = new Wall(0, 540, 770, 10, Color.BLACK);
 		topWall = new Wall(0, 0, 770, 10, Color.BLACK);
 		keys = new boolean[4];
-		Score = 0;
+		
 
 		setBackground(Color.WHITE);
 		setVisible(true);
@@ -111,7 +148,8 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		// create a graphics reference to the back ground image
 		// we will draw all changes on the background image
 		Graphics graphToBack = back.createGraphics();
-		block.draw(graphToBack);
+		
+		
 
 
 		// MOVEMENT FOR PADDLES
@@ -150,6 +188,7 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 						ball.setYSpeed(-ball.getYSpeed());
 					}
 				}
+				
 				/*if (ball.didCollideLeft(Paddle) || ball.didCollideRight(Paddle)) {
 					ball.setXSpeed(-ball.getXSpeed());
 				}
@@ -159,7 +198,6 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		
 		// update objects
 		ball.update(graphToBack);
-
 		
 		// CLEAR BACKGROUND
 		graphToBack.clearRect(0, 0, TheGame.WIDTH, TheGame.HEIGHT);
@@ -175,15 +213,19 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 		graphToBack.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 20));
 		graphToBack.clearRect(52, 556, 708, 248);
 		graphToBack.setColor(Color.BLACK);
-		graphToBack.drawString("Blocks Left: " + Score, 120, 590);
+		graphToBack.drawString("Blocks Left: " + blocksLeft, 120, 590);
 
 		ball.draw(graphToBack, Color.RED);
 		Paddle.draw(graphToBack);
 		block.draw(graphToBack);
-		
-
-		System.out.println(ball.getXSpeed() + " " + ball.getYSpeed());
-
+		for (int j = 0; j<topBlocks.size();j++){
+			topBlocks.get(j).draw(graphToBack);
+			bottomBlocks.get(j).draw(graphToBack);
+		}
+		for (int j = 0; j<leftBlocks.size();j++){
+			leftBlocks.get(j).draw(graphToBack);
+			rightBlocks.get(j).draw(graphToBack);
+		}
 		twoDGraph.drawImage(back, null, 0, 0);
 	}
 
