@@ -189,12 +189,59 @@ public class Pong extends Canvas implements KeyListener, Runnable {
 					}
 				}
 				
-				/*if (ball.didCollideLeft(Paddle) || ball.didCollideRight(Paddle)) {
-					ball.setXSpeed(-ball.getXSpeed());
-				}
-				if (ball.didCollideTop(Paddle) || ball.didCollideBottom(Paddle)) {
-					ball.setYSpeed(-ball.getYSpeed());
-				}*/
+				// IF ball collides with Blocks
+				
+				
+					
+						try{
+							for(int i = 0; i<topBlocks.size();i++){
+								if (ball.didCollideBottom(topBlocks.get(i))){
+									ball.setYSpeed(-ball.getYSpeed());
+									topBlocks.get(i).setColor(Color.WHITE);
+									topBlocks.get(i).draw(graphToBack);
+									//topBlocks.remove(i);
+									
+								}
+								/*if (ball.didCollideTop(bottomBlocks.get(i))){
+									ball.setYSpeed(-ball.getYSpeed());
+									bottomBlocks.get(i).setColor(Color.WHITE);
+									bottomBlocks.get(i).draw(graphToBack);
+									bottomBlocks.remove(i);
+									
+								}
+							for (int j = 0; j<leftBlocks.size();j++){
+								if (ball.didCollideLeft(rightBlocks.get(i))){
+									ball.setXSpeed(-ball.getXSpeed());
+									rightBlocks.get(i).setColor(Color.WHITE);
+									rightBlocks.get(i).draw(graphToBack);
+									rightBlocks.remove(i);
+									
+								}
+								if (ball.didCollideRight(leftBlocks.get(i))){
+									ball.setXSpeed(-ball.getXSpeed());
+									leftBlocks.get(i).setColor(Color.WHITE);
+									leftBlocks.get(i).draw(graphToBack);
+									leftBlocks.remove(i);
+									
+								}
+							}*/
+								
+							}
+						}catch(Exception e){
+							
+						}
+						
+						
+					
+				
+				
+				
+						
+						
+					
+				
+				
+				
 		
 		// update objects
 		ball.update(graphToBack);

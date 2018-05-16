@@ -6,6 +6,7 @@
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.ArrayList;
 
 
 
@@ -73,6 +74,7 @@ public class Block implements Locatable,Collidable
    	{
    		color = col;
    	}
+
 
 
    	public int getX() {
